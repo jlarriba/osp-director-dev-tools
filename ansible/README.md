@@ -6,16 +6,6 @@
 
 Provision a host with RHEL 8.2 or CentOS should also work with at least 128GB of RAM
 
-##### Clone the repository to the beaker host
-
-The ansible playbooks can be used as any user, but this user needs to be able to
-get root priviledges to the host via passwordless sudo.
-
-```
-ssh root@<node>
-dnf install -y git
-git clone git@github.com:openstack-k8s-operators/osp-director-dev-tools.git
-```
 
 ##### Install Dependencies
 
@@ -23,6 +13,16 @@ If not already installed, install the required dependencies
 
 ```
 dnf install -y ansible git libvirt-client python3-netaddr python3-lxml
+```
+
+##### Clone the repository to the beaker host
+
+The ansible playbooks can be used as any user, but this user needs to be able to
+get root privileges to the host via passwordless sudo.
+
+```
+ssh root@<node>
+git clone https://github.com/openstack-k8s-operators/osp-director-dev-tools.git
 ```
 
 ##### Modify the variable files
@@ -38,7 +38,7 @@ You can get ci_token from https://console-openshift-console.apps.ci.l2s4.p1.open
 by clicking on your name in the top right corner and coping the login
 command (the token is part of the command)
 
-`local-deaults.yaml` has the min format:
+`local-defaults.yaml` has the min format:
 
 ```
 ci_token: <TOKEN>
