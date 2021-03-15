@@ -54,7 +54,7 @@ export CI_TOKEN: <TOKEN>
 Additionally create the following files relative to the
 project root:
 
-`vars/rhel-subscription.yaml` in the format:
+`vars/rhel-subscription.yaml` is optional. If the file is not created, it will try to use your current subscription to add the corresponding repositories:
 
 ```
 rhel_subscription_activation_key: xyz
